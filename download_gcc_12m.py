@@ -90,3 +90,12 @@ num_processes = 2000
 
 download_records_multi_process(cc12m_dict, start_idx, num_records_per_process, num_processes, shared_res_dict)
 
+final_res_dict = {}
+
+for k in shared_res_dict.keys():
+    final_res_dict[k] = shared_res_dict[k]
+
+import json
+
+with open(f'res_download_{start_idx}.json', 'w+') as fp:
+    json.dump(final_res_dict, fp)
