@@ -1,3 +1,4 @@
+import os
 import csv
 import argparse
 from tqdm import tqdm
@@ -15,9 +16,11 @@ parser = argparse.ArgumentParser(
     description="Args for training parameters", formatter_class=argparse.ArgumentDefaultsHelpFormatter,
 )
 parser.add_argument("--start", type=int, dest="start_idx", required=True, help="Start index for the script")
+parser.add_argument("--store_path", type=str, dest="store_path", required=True, help="Path to store images")
 
 args = parser.parse_args()
 start_idx = args.start_idx
+store_path = args.store_path
 
 
 with open("cc12m.tsv") as file:
@@ -39,7 +42,7 @@ def download_one_record(record_meta_data, record_id, res_dict):
     
     try:
         img_data = requests.get(link, timeout=10).content
-        with open(f'image_{record_id}.jpg', 'wb') as handler:
+        with open(os.path.join(store_path, f'image_{record_id}.jpg', 'wb')) as handler:
             handler.write(img_data)
         res_dict[record_id] = 1
     except:
