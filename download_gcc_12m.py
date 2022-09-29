@@ -88,8 +88,8 @@ def download_records_multi_process(meta_dict, start_idx, num_records_per_process
     for proc in tqdm(proc_list):
         proc.join()
 
-num_records_per_process = 500
-num_processes = 2000
+num_records_per_process = 1250
+num_processes = 800
 
 download_records_multi_process(cc12m_dict, start_idx, num_records_per_process, num_processes, shared_res_dict)
 

@@ -8,4 +8,4 @@
 
 source activate pytorch_latest
 
-srun python download_gcc_12m.py --start 11000000
+srun python download_gcc_12m.py --start 11000000 --store_path /datasets01/gcc12m/11000000

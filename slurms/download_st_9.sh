@@ -6,6 +6,4 @@
 #SBATCH --cpus-per-task=10
 #SBATCH --account=all
 
-source activate pytorch_latest
-
-srun python download_gcc_12m.py --start 9000000
+srun python download_gcc_12m.py --start 9000000 --store_path /datasets01/gcc12m/9000000
