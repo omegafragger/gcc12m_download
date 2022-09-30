@@ -6,4 +6,4 @@
 #SBATCH --cpus-per-task=10
 #SBATCH --account=all
 
-srun python download_gcc_12m.py --start 7000000 --store_path /datasets01/gcc12m/7000000
+srun python download_gcc_12m.py --start 7000000 --store_path /fsx/tsungyulin/gcc12m/7000000
