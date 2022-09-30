@@ -18,11 +18,12 @@ mv cc12m.tsv ./gcc12m_download/
 
 # Make dirs in /datasets01
 echo "Making directory structure inside /datasets01"
-mkdir /datasets01/gcc12m
-for i in 0 1000000 2000000 3000000 4000000 5000000 6000000 7000000 8000000 9000000 10000000 11000000 12000000; do mkdir /datasets01/gcc12m/$i; done
+mkdir /fsx/tsungyulin/gcc12m
+for i in 0 1000000 2000000 3000000 4000000 5000000 6000000 7000000 8000000 9000000 10000000 11000000 12000000; do mkdir /fsx/tsungyulin/gcc12m/$i; done
 
 
 # Run slurm jobs
 echo "Kicking off slurm scripts"
-for i in gcc12m_download/slurms/*.sh; do sbatch $i; done
+cd gcc12m_download
+for i in slurms/*.sh; do sbatch $i; done
 echo "Done!"
