@@ -9,8 +9,8 @@ import multiprocessing as mp
 from multiprocessing import Process, Manager
 
 
-NUM_RECORDS_PER_PROCESS = 1250
-NUM_PROCESSES = 800
+NUM_RECORDS_PER_PROCESS = 2500
+NUM_PROCESSES = 400
 
 
 meta_file_dict = {
