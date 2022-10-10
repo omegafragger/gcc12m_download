@@ -40,8 +40,8 @@ def download_one_record(record_meta_data, record_id, res_dict, store_path):
     store_path: Path to store the image
     '''
     
-    link = record_meta_data[0]
-    image_desc = record_meta_data[1]
+    link = record_meta_data[1]
+    image_desc = record_meta_data[0]
     
     try:
         img_data = requests.get(link, timeout=10).content
